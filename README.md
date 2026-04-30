@@ -1,15 +1,15 @@
-# 🛡️ Secure AI
+# 🛡️ sentinelOps
 
-**Comprehensive cybersecurity platform with ML-powered vulnerability scanning**
+**Comprehensive security automation platform with vulnerability scanning, phishing detection, and subdomain discovery**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Built with React](https://img.shields.io/badge/Frontend-React%20%2B%20TypeScript-blue)](https://react.dev)
 [![Powered by FastAPI](https://img.shields.io/badge/Backend-FastAPI%20%2B%20Python-green)](https://fastapi.tiangolo.com)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-secure--ai.netlify.app-brightgreen)](https://secure-ai.netlify.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-sentinelOps-brightgreen)](https://secure-ai.netlify.app)
 
 ## 📋 Overview
 
-Secure AI is a comprehensive cybersecurity platform providing multiple security scanning and analysis tools. The platform combines a modern React frontend with a robust FastAPI backend to deliver vulnerability scanning, phishing detection, subdomain discovery, and AI-powered security fix generation.
+sentinelOps is a comprehensive security automation platform providing multiple scanning and analysis tools. The platform combines a modern React frontend with a robust FastAPI backend to deliver vulnerability scanning, phishing detection, subdomain discovery, and security fix generation.
 
 The architecture leverages machine learning models trained on security features and integrates with industry-standard security tools like **pip-audit**, **npm audit**, and **osv-scanner** to provide multi-language vulnerability detection across 15+ programming languages.
 
@@ -45,13 +45,13 @@ The platform features async/await architecture for concurrent processing, **Goog
 ## 📸 Screenshots
 
 ### Main Dashboard
-![Secure AI - Main Dashboard](public/images/main.png)
+![sentinelOps - Main Dashboard](public/images/main.png)
 
 ### Vulnerability Scanner
-![Secure AI - Vulnerability Scanner](public/images/scanner.png)
+![sentinelOps - Vulnerability Scanner](public/images/scanner.png)
 
 ### Phishing Detection
-![Secure AI - Phishing Detection](public/images/phishing.png)
+![sentinelOps - Phishing Detection](public/images/phishing.png)
 
 ---
 
@@ -66,8 +66,8 @@ The platform features async/await architecture for concurrent processing, **Goog
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/secure-ai.git
-   cd secure-ai
+   git clone https://github.com/yourusername/sentinelOps.git
+   cd sentinelOps
    ```
 
 2. **Install dependencies**
@@ -214,7 +214,7 @@ Refer to the backend repository for FastAPI setup instructions.
 ## 📝 Project Structure
 
 ```
-secure-ai/
+sentinelOps/
 ├── src/
 │   ├── components/        # React components
 │   ├── pages/            # Page components
@@ -251,7 +251,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 For issues, questions, or suggestions, please:
 - Open an issue on GitHub
 - Contact the development team
-- Check documentation at [https://secure-ai.netlify.app](https://secure-ai.netlify.app)
+- Check documentation at [sentinelOps Live Docs](https://secure-ai.netlify.app)
 
 ## 🌟 Acknowledgments
 
@@ -265,7 +265,7 @@ For issues, questions, or suggestions, please:
 
 **Year:** 2025
 
-**Live Demo:** [https://secure-ai.netlify.app](https://secure-ai.netlify.app)
+**Live Demo:** sentinelOps on [Live Demo](https://secure-ai.netlify.app)
 
 **Category:** Cybersecurity / ML Platform
 

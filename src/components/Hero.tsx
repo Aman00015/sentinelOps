@@ -3,7 +3,7 @@ import { ArrowRight, Shield, Scan, Globe, AlertTriangle, FileX } from "lucide-re
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 sm:pt-32">
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
@@ -15,21 +15,22 @@ const Hero = () => {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-slate-950/70 backdrop-blur-[2px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,hsl(var(--primary)/0.18),transparent_40%),radial-gradient(circle_at_bottom_right,hsl(200_90%_60%/0.12),transparent_30%)]" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-full px-4 py-2 mb-8">
+          <div className="inline-flex items-center gap-2 glass-chip rounded-full px-4 py-2 mb-8">
             <Shield className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium text-muted-foreground">
-              AI-Powered Security Platform
+            <span className="text-sm font-medium text-muted-foreground font-mono tracking-wide">
+              Automate Your Security Checks
             </span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
+          <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground mb-6 leading-[0.95] tracking-tight">
             Always Ready To
             <span className="block bg-gradient-primary bg-clip-text text-transparent">
               Secure
@@ -37,38 +38,28 @@ const Hero = () => {
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            Modern cyber threats require modern solutions. SecureAI Suite integrates essential cybersecurity tools into one powerful platform.
+          <p className="text-lg md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+            Modern cyber threats require modern solutions. sentinelOps Suite integrates essential cybersecurity tools into one powerful platform.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Button variant="hero" size="lg" className="min-w-48">
-              Get Demo
-              <ArrowRight className="h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="lg" className="min-w-48">
-              Learn More
-            </Button>
-          </div>
 
           {/* Security Tools Preview */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
-            <div className="bg-card/30 backdrop-blur-sm border border-primary/20 rounded-lg p-4 hover:bg-card/50 transition-all duration-300">
+            <div className="glass-card rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1">
               <Scan className="h-8 w-8 text-primary mx-auto mb-2" />
-              <p className="text-sm text-muted-foreground">Vulnerability Scanner</p>
+              <p className="text-sm font-medium text-muted-foreground">Vulnerability Scanner</p>
             </div>
-            <div className="bg-card/30 backdrop-blur-sm border border-primary/20 rounded-lg p-4 hover:bg-card/50 transition-all duration-300">
+            <div className="glass-card rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1">
               <Globe className="h-8 w-8 text-primary mx-auto mb-2" />
-              <p className="text-sm text-muted-foreground">Subdomain Finder</p>
+              <p className="text-sm font-medium text-muted-foreground">Subdomain Finder</p>
             </div>
-            <div className="bg-card/30 backdrop-blur-sm border border-primary/20 rounded-lg p-4 hover:bg-card/50 transition-all duration-300">
+            <div className="glass-card rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1">
               <AlertTriangle className="h-8 w-8 text-primary mx-auto mb-2" />
-              <p className="text-sm text-muted-foreground">Phishing Detector</p>
+              <p className="text-sm font-medium text-muted-foreground">Phishing Detector</p>
             </div>
-            <div className="bg-card/30 backdrop-blur-sm border border-primary/20 rounded-lg p-4 hover:bg-card/50 transition-all duration-300">
+            <div className="glass-card rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1">
               <FileX className="h-8 w-8 text-primary mx-auto mb-2" />
-              <p className="text-sm text-muted-foreground">Malware Scanner</p>
+              <p className="text-sm font-medium text-muted-foreground">Malware Scanner</p>
             </div>
           </div>
         </div>

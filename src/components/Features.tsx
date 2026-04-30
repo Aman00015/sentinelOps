@@ -58,10 +58,10 @@ const Features = () => {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4">
+          <Badge variant="outline" className="glass-chip mb-4 rounded-full px-4 py-1.5 uppercase tracking-[0.2em]">
             Platform Features
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
             Built for Modern Security
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -72,13 +72,13 @@ const Features = () => {
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {features.map((feature, index) => (
-            <Card key={index} className="bg-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-card group">
+            <Card key={index} className="glass-card rounded-2xl transition-all duration-300 hover:-translate-y-1 group">
               <CardHeader>
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 bg-primary/20 rounded-md group-hover:bg-primary/30 transition-colors">
+                  <div className="p-2 rounded-xl border border-white/10 bg-white/[0.06] backdrop-blur-xl group-hover:bg-white/10 transition-colors">
                     {feature.icon}
                   </div>
-                  <CardTitle className="text-foreground">{feature.title}</CardTitle>
+                  <CardTitle className="font-display text-xl text-foreground">{feature.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
@@ -91,9 +91,9 @@ const Features = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="bg-gradient-card border border-primary/20 rounded-xl p-8">
+        <div className="glass-panel rounded-3xl p-8">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-foreground mb-2">
+            <h3 className="font-display text-2xl font-bold text-foreground mb-2">
               Trusted by Security Teams Worldwide
             </h3>
             <p className="text-muted-foreground">

@@ -9,17 +9,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-glow hover:shadow-[0_0_60px_hsl(var(--primary)/0.5)] hover:scale-105",
+        default: "border border-white/10 bg-primary/90 text-primary-foreground shadow-[0_16px_50px_hsl(var(--primary)/0.28)] hover:bg-primary hover:shadow-[0_0_60px_hsl(var(--primary)/0.45)] hover:-translate-y-0.5",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-primary/30 bg-transparent text-primary-foreground hover:bg-primary/20 hover:border-primary",
+          "border border-white/10 bg-white/[0.06] text-foreground backdrop-blur-xl hover:bg-white/[0.12] hover:border-white/20",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        ghost: "hover:bg-white/[0.08] hover:text-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-primary text-primary-foreground hover:shadow-glow hover:scale-105 border border-primary/20",
-        demo: "bg-primary text-primary-foreground hover:bg-primary-glow hover:shadow-glow hover:scale-105",
+        hero: "border border-white/10 bg-gradient-primary text-primary-foreground hover:shadow-glow hover:-translate-y-0.5",
+        demo: "border border-white/10 bg-white/[0.08] text-foreground backdrop-blur-xl hover:bg-white/[0.12] hover:border-primary/30",
       },
       size: {
         default: "h-10 px-4 py-2",

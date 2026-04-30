@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Patchly | Remote Codebase Auditor',
-  description: 'Audit your codebases for known vulnerabilities, hassle-free.',
+  title: 'sentinelOps | Security Automation Platform',
+  description: 'Automate vulnerability scanning, phishing detection, and subdomain discovery with sentinelOps.',
 };

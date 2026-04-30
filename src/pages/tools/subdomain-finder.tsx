@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Search, ExternalLink, Globe, Shield, AlertCircle, CheckCircle, XCircle } from 'lucide-react';
+import { ArrowLeft, Search, ExternalLink, Globe, Shield, AlertCircle, CheckCircle, XCircle } from 'lucide-react';
 import FloatingBg from '@/components/AnimatedBg';
+import { Link } from 'react-router-dom';
 
 interface SubdomainResult {
   subdomain: string;
@@ -94,6 +95,16 @@ const SubdomainFinder: React.FC = () => {
     <div className="relative min-h-screen bg-transparent overflow-x-hidden font-sans">
       <FloatingBg />
       <div className="max-w-6xl mx-auto py-8 px-4 relative z-10">
+        <div className="mb-6">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-sm text-white/90 backdrop-blur-xl transition-colors hover:bg-white/[0.1]"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Home
+          </Link>
+        </div>
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

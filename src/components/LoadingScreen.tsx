@@ -1,30 +1,31 @@
 import { useEffect, useState } from "react";
-import { Shield, Scan, Globe, AlertTriangle, FileX, Lock, Eye, Search } from "lucide-react";
+import { Shield, Scan, Globe, Lock } from "lucide-react";
 
 interface LoadingScreenProps {
   onLoadingComplete: () => void;
 }
 
+const scanSteps = [
+  "Booting Security Core...",
+  "Loading Security Modules...",
+  "Scanning for Vulnerabilities...",
+  "Checking Network Security...",
+  "Analyzing Threat Patterns...",
+  "Finalizing Security Suite..."
+];
+
 const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
   const [progress, setProgress] = useState(0);
-  const [currentScan, setCurrentScan] = useState("Initializing SecureAI...");
-  
-  const scanSteps = [
-    "Initializing SecureAI...",
-    "Loading Security Modules...",
-    "Scanning for Vulnerabilities...",
-    "Checking Network Security...",
-    "Analyzing Threat Patterns...",
-    "Finalizing Security Suite..."
-  ];
-
-  const securityIcons = [Shield, Scan, Globe, AlertTriangle, FileX, Lock, Eye, Search];
+  const [currentScan, setCurrentScan] = useState("Initializing sentinelOps...");
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const introTimer = setTimeout(() => setIsVisible(true), 40);
+
     const interval = setInterval(() => {
       setProgress(prev => {
-        const newProgress = prev + 2;
-        const stepIndex = Math.floor(newProgress / 17);
+        const newProgress = prev + 3;
+        const stepIndex = Math.floor(newProgress / 20);
         if (stepIndex < scanSteps.length) {
           setCurrentScan(scanSteps[stepIndex]);
         }
@@ -38,84 +39,36 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
       });
     }, 60);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearTimeout(introTimer);
+      clearInterval(interval);
+    };
   }, [onLoadingComplete]);
 
   return (
-    <div className="fixed inset-0 bg-background z-50 flex items-center justify-center">
+    <div className="fixed inset-0 bg-background/90 z-50 flex items-center justify-center overflow-hidden backdrop-blur-2xl">
       {/* Animated background */}
-      <div className="absolute inset-0 bg-gradient-hero opacity-50"></div>
+      <div className="absolute inset-0 bg-gradient-hero opacity-40"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,hsl(var(--primary)/0.20),transparent_34%),radial-gradient(circle_at_bottom,hsl(200_90%_60%/0.10),transparent_30%)]" />
       
-      {/* Floating security icons */}
-      <div className="absolute inset-0 overflow-hidden">
-        {securityIcons.map((Icon, index) => (
-          <Icon
-            key={index}
-            className={`absolute text-primary/20 animate-float`}
-            size={24}
-            style={{
-              left: `${10 + (index * 12)}%`,
-              top: `${20 + (index % 3) * 25}%`,
-              animationDelay: `${index * 0.5}s`,
-              animationDuration: `${4 + index}s`
-            }}
-          />
-        ))}
-      </div>
-
       {/* Main loading content */}
-      <div className="relative z-10 text-center max-w-md mx-auto px-6">
+      <div className={`relative z-10 text-center max-w-sm mx-auto px-5 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-[0.98]'}`}>
         {/* Logo */}
-        <div className="mb-8">
-          <div className="w-20 h-20 mx-auto bg-gradient-primary rounded-2xl flex items-center justify-center mb-4 animate-pulse-glow">
-            <Shield className="w-10 h-10 text-white" />
+        <div className="mb-6">
+          <div className="w-16 h-16 mx-auto bg-gradient-primary rounded-3xl flex items-center justify-center mb-4 animate-pulse-glow shadow-[0_0_40px_hsl(var(--primary)/0.22)] border border-white/10">
+            <Shield className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-3xl font-bold text-foreground mb-2">SecureAI Suite</h1>
-          <p className="text-muted-foreground">Next-Generation Cybersecurity Platform</p>
-        </div>
-
-        {/* Scanning animation */}
-        <div className="mb-8">
-          <div className="relative">
-            {/* Scan line */}
-            <div className="h-32 w-full bg-card/50 rounded-lg border border-border/50 overflow-hidden relative">
-              <div 
-                className="absolute top-0 left-0 h-full w-1 bg-primary animate-pulse"
-                style={{
-                  left: `${progress}%`,
-                  transition: 'left 0.1s ease-out'
-                }}
-              ></div>
-              
-              {/* Grid overlay */}
-              <div className="absolute inset-0 opacity-20">
-                {[...Array(8)].map((_, i) => (
-                  <div key={i} className="flex h-4 gap-1 mt-1">
-                    {[...Array(12)].map((_, j) => (
-                      <div 
-                        key={j} 
-                        className={`w-4 h-2 rounded-sm ${
-                          (i * 12 + j) < (progress * 1.2) ? 'bg-primary' : 'bg-muted/30'
-                        }`}
-                        style={{
-                          animationDelay: `${(i * 12 + j) * 0.02}s`
-                        }}
-                      ></div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+          <h1 className="font-display text-2xl font-bold text-foreground mb-2">sentinelOps Suite</h1>
+          <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-muted-foreground/90">Next-Generation Cybersecurity Platform</p>
+        </div>   
 
         {/* Progress */}
-        <div className="mb-6">
-          <div className="flex justify-between text-sm text-muted-foreground mb-2">
+        <div className="mb-5">
+          <div className="flex justify-between text-sm text-muted-foreground mb-2 font-mono">
             <span>{currentScan}</span>
             <span>{progress}%</span>
           </div>
-          <div className="w-full bg-muted/30 rounded-full h-2 overflow-hidden">
+          <div className="w-full bg-white/10 rounded-full h-2 overflow-hidden">
             <div 
               className="h-full bg-gradient-primary rounded-full transition-all duration-300 ease-out relative"
               style={{ width: `${progress}%` }}
@@ -126,20 +79,20 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
         </div>
 
         {/* Security status indicators */}
-        <div className="grid grid-cols-2 gap-3 text-xs">
-          <div className={`p-2 rounded border ${progress > 20 ? 'border-success bg-success/10 text-success' : 'border-muted bg-muted/10 text-muted-foreground'}`}>
+        <div className="grid grid-cols-2 gap-2 text-[11px]">
+          <div className={`p-2.5 rounded-2xl border backdrop-blur-xl transition-colors ${progress > 20 ? 'border-success/30 bg-success/10 text-success' : 'border-white/10 bg-white/[0.04] text-muted-foreground'}`}>
             <Shield className="w-4 h-4 mx-auto mb-1" />
             <div>Security Core</div>
           </div>
-          <div className={`p-2 rounded border ${progress > 40 ? 'border-success bg-success/10 text-success' : 'border-muted bg-muted/10 text-muted-foreground'}`}>
+          <div className={`p-2.5 rounded-2xl border backdrop-blur-xl transition-colors ${progress > 40 ? 'border-success/30 bg-success/10 text-success' : 'border-white/10 bg-white/[0.04] text-muted-foreground'}`}>
             <Scan className="w-4 h-4 mx-auto mb-1" />
             <div>Threat Scanner</div>
           </div>
-          <div className={`p-2 rounded border ${progress > 60 ? 'border-success bg-success/10 text-success' : 'border-muted bg-muted/10 text-muted-foreground'}`}>
+          <div className={`p-2.5 rounded-2xl border backdrop-blur-xl transition-colors ${progress > 60 ? 'border-success/30 bg-success/10 text-success' : 'border-white/10 bg-white/[0.04] text-muted-foreground'}`}>
             <Globe className="w-4 h-4 mx-auto mb-1" />
             <div>Network Monitor</div>
           </div>
-          <div className={`p-2 rounded border ${progress > 80 ? 'border-success bg-success/10 text-success' : 'border-muted bg-muted/10 text-muted-foreground'}`}>
+          <div className={`p-2.5 rounded-2xl border backdrop-blur-xl transition-colors ${progress > 80 ? 'border-success/30 bg-success/10 text-success' : 'border-white/10 bg-white/[0.04] text-muted-foreground'}`}>
             <Lock className="w-4 h-4 mx-auto mb-1" />
             <div>Security Suite</div>
           </div>

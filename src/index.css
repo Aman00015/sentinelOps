@@ -1,19 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.font-orbitron {
-  font-family: 'Orbitron', sans-serif;
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
 }
 
-/* SecureAI Suite Design System - Cybersecurity Theme
+.font-body {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* sentinelOps Suite Design System - Cybersecurity Theme
 All colors MUST be HSL. Based on Checkmarx-inspired design.
 */
 
 @layer base {
   :root {
-    /* Core SecureAI Brand Colors */
+    /* Core sentinelOps Brand Colors */
     --background: 229 84% 5%;
     --foreground: 273 100% 98%;
 
@@ -59,12 +67,12 @@ All colors MUST be HSL. Based on Checkmarx-inspired design.
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(229 84% 5%) 0%, hsl(259 97% 15%) 50%, hsl(229 84% 5%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(229 84% 8%), hsl(229 50% 12%));
+    --gradient-hero: linear-gradient(135deg, hsl(229 84% 5%) 0%, hsl(259 97% 15%) 46%, hsl(200 80% 13%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(229 84% 8% / 0.72), hsl(229 50% 12% / 0.45));
 
     /* Shadows */
     --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
-    --shadow-card: 0 8px 32px hsl(229 84% 5% / 0.5);
+    --shadow-card: 0 18px 60px hsl(229 84% 3% / 0.45);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -126,6 +134,10 @@ All colors MUST be HSL. Based on Checkmarx-inspired design.
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply border-border;
     scrollbar-width: none;  /* Firefox */
@@ -138,6 +150,55 @@ All colors MUST be HSL. Based on Checkmarx-inspired design.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'IBM Plex Sans', sans-serif;
+    min-height: 100vh;
     overflow-y: auto;
+    background:
+      radial-gradient(circle at top left, hsl(var(--primary) / 0.18), transparent 30%),
+      radial-gradient(circle at top right, hsl(200 90% 60% / 0.10), transparent 26%),
+      linear-gradient(180deg, hsl(var(--background)) 0%, hsl(229 84% 4%) 100%);
+    background-attachment: fixed;
+    position: relative;
+    isolation: isolate;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+      radial-gradient(circle at 20% 20%, hsl(var(--primary) / 0.18), transparent 0 22%),
+      radial-gradient(circle at 80% 18%, hsl(200 90% 60% / 0.12), transparent 0 18%),
+      radial-gradient(circle at 50% 100%, hsl(259 97% 59% / 0.12), transparent 0 20%);
+    filter: blur(6px);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.04em;
+  }
+}
+
+@layer components {
+  .glass-nav {
+    @apply border border-white/10 bg-white/[0.06] backdrop-blur-2xl shadow-[0_24px_80px_hsl(229_84%_3%/0.38)];
+  }
+
+  .glass-panel {
+    @apply border border-white/10 bg-white/[0.06] backdrop-blur-2xl shadow-[0_24px_80px_hsl(229_84%_3%/0.34)];
+  }
+
+  .glass-card {
+    @apply border border-white/10 bg-white/[0.08] backdrop-blur-2xl shadow-[0_24px_80px_hsl(229_84%_3%/0.36)];
+  }
+
+  .glass-chip {
+    @apply border border-white/10 bg-white/[0.08] backdrop-blur-xl shadow-[0_12px_40px_hsl(229_84%_3%/0.2)];
   }
 }

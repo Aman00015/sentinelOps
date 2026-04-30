@@ -59,14 +59,14 @@ const SecurityTools = () => {
   ];
 
   return (
-    <section id="tools" className="py-20 bg-card/30">
+    <section id="tools" className="py-20">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4">
+          <Badge variant="outline" className="glass-chip mb-4 rounded-full px-4 py-1.5 uppercase tracking-[0.2em]">
             Security Tools Suite
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
             Comprehensive Security Arsenal
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -78,18 +78,18 @@ const SecurityTools = () => {
         {/* Tools Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {tools.map((tool, index) => (
-            <Card key={index} className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-500 hover:shadow-glow group">
+            <Card key={index} className="glass-card rounded-3xl transition-all duration-500 hover:-translate-y-1 group">
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="p-3 bg-primary/20 rounded-lg group-hover:bg-primary/30 transition-colors">
+                    <div className="p-3 rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-xl group-hover:bg-white/10 transition-colors">
                       {tool.icon}
                     </div>
                     <div>
-                      <CardTitle className="text-foreground text-xl mb-2">{tool.title}</CardTitle>
+                      <CardTitle className="font-display text-foreground text-xl mb-2">{tool.title}</CardTitle>
                       <Badge 
                         variant="outline" 
-                        className={`text-xs ${
+                        className={`glass-chip text-xs ${
                           tool.color === 'success' ? 'border-success text-success' : ''
                         }`}
                       >
@@ -121,12 +121,12 @@ const SecurityTools = () => {
                 {/* Action Buttons */}
                 <div className="flex gap-3">
                   <Link to={tool.href} className="flex-1">
-                  <Button variant="default" size="sm" className="flex-1">
-                    Try Tool
-                    <ArrowRight className="h-4 w-4" />
-                  </Button>
+                    <Button variant="default" size="sm" className="w-full rounded-full">
+                      Try Tool
+                      <ArrowRight className="h-4 w-4" />
+                    </Button>
                   </Link>
-                  <Button variant="outline" size="sm">
+                  <Button variant="outline" size="sm" className="rounded-full">
                     <Search className="h-4 w-4" />
                   </Button>
                 </div>
@@ -137,15 +137,15 @@ const SecurityTools = () => {
 
         {/* Integration Notice */}
         <div className="mt-16 text-center">
-          <div className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-lg p-8 max-w-2xl mx-auto">
+          <div className="glass-panel rounded-3xl p-8 max-w-2xl mx-auto">
             <Github className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-foreground mb-3">
+            <h3 className="font-display text-xl font-semibold text-foreground mb-3">
               Seamless Integration Ready
             </h3>
             <p className="text-muted-foreground mb-6">
               All tools are designed for easy integration with your existing GitHub workflow and security stack.
             </p>
-            <Button variant="outline">
+            <Button variant="outline" className="rounded-full">
               View Integration Guide
             </Button>
           </div>
