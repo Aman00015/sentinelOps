@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Built with React](https://img.shields.io/badge/Frontend-React%20%2B%20TypeScript-blue)](https://react.dev)
 [![Powered by FastAPI](https://img.shields.io/badge/Backend-FastAPI%20%2B%20Python-green)](https://fastapi.tiangolo.com)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-sentinelOps-brightgreen)](https://secure-ai.netlify.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-sentinelOps-brightgreen)](https://sentinel-ops-ashen.vercel.app/)
 
 ## 📋 Overview
 
@@ -202,7 +202,7 @@ Refer to the backend repository for FastAPI setup instructions.
 ## 🚀 Deployment
 
 ### Frontend
-- **Hosting:** Netlify
+- **Hosting:** Vercel
 - **Auto-deployment:** On push to main branch
 - **Performance:** Optimized builds with Vite
 
@@ -241,36 +241,3 @@ Contributions are welcome! Please follow these steps:
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙋 Support
-
-For issues, questions, or suggestions, please:
-- Open an issue on GitHub
-- Contact the development team
-- Check documentation at [sentinelOps Live Docs](https://secure-ai.netlify.app)
-
-## 🌟 Acknowledgments
-
-- Built with [React](https://react.dev) and [TypeScript](https://www.typescriptlang.org)
-- Security tools: pip-audit, npm audit, osv-scanner
-- ML frameworks: Scikit-learn
-- AI powered by [Google Gemini](https://deepmind.google/technologies/gemini/)
-- UI components from [Shadcn/ui](https://ui.shadcn.com)
-
-## 📅 Project Timeline
-
-**Year:** 2025
-
-**Live Demo:** sentinelOps on [Live Demo](https://secure-ai.netlify.app)
-
-**Category:** Cybersecurity / ML Platform
-
----
-
-<p align="center">
-  Built with ❤️ for the security community
-</p>
